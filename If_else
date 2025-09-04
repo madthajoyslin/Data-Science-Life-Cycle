@@ -1,0 +1,82 @@
+If else:-
+----------
+
+1) Ternary operators:-
+print("A") if a>b else print("B")
+
+2)
+a=200
+b=500
+c=400
+if a<b and b>c:
+    print("both conditions true")
+
+3) if a>b:
+    pass
+
+---------------------------------------------------------------
+x=int(input("enter the number"))
+match x:
+	case 1:
+		print("Monday")
+	case 2:
+		print("Tuesday")
+	case 3 | 4 | 5 |6:
+		print("" all days)
+	case _:
+		print("nothing executes this will execute")
+
+---------------------------------------------------------------------
+break is used to stop the loop
+continue to stop the current iteration and continue the next iteration
+
+------------------------------------------------------------------------
+for loop:-
+1) for loop is used to iterate list,tuple,set,dict,string,range
+2)it return one item at a time using __iter__() and __next__() method internally
+3) for the index to print we have enumerate
+
+fruits=["orange","banana","apple"]
+for index, fruit in enumerate(fruits):
+	print(index,fruit)
+
+4) range(2,4,2) has 3 parameters
+5) simply else: can be addes for the loops
+for x in range(6)
+   print(x)
+else:
+   print("nothing")
+-------------------------------------------------------------------------------
+functions:- (*) used when number of arguments is unknown
+
+1)args
+def my_func(*args):
+   print("names", args[2] )
+my_func("hi","hello","nello")
+
+2)kwargs (keyword arguments) (**)
+def my_func(first,middle,last):
+	print("the middle name is", middle)
+my_func(middle="lavita", last="madtha", first="joyslin") ## order doesnt matter
+
+
+====================================================================================
+Inheritence:- inherits the properties and methods from parent class to child class
+
+class Person:
+	def __init__(self,firstName, lastName):
+		self.firtName=firstName
+		self.lastName=lastName
+	def printname(self):
+		print(self.firstName + self.lastName)
+
+class Student(Person):
+	def __init__(self,fname,lname):
+		Person.__init__(self,firstName,lastName): or super()	
+		self.graduationyear=2025
+
+
+s1=Student("joyslin","madtha")
+s1.printname()
+
+=====================================================================================
