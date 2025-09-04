@@ -1,0 +1,141 @@
+python collections:- list,tuple,set,dctionary
+
+List:-
+dir([])
+
+changing the list items
+
+list1=[1,"orange",5.6,"Joyslin","Madtha",True]
+list1[2:4]=["Lavita","Maria", "Thota","Mangalore"]
+
+adding the items at specified place:-
+list1.insert(0,"python")
+
+adding the items at the end
+list1.append(False)
+
+remove items
+list1.remove("mangalore")
+
+remove items at specified index/  also removes at the end if not specified
+list1.pop()
+
+del keyword:-
+del list1[4]     or  del list  #removes completely even list
+
+Empties list:-
+list1.clear()
+
+sort()list:-
+list2=[3,5,1,0,7]
+list2.sort()
+
+sort() in descending order:-
+list2.sort(reverse=True)
+
+whatever the list is given it will reverse, though it doesnt have the order
+list2.reverse()
+-----------------------------------------------------------------------------------
+copy() the list:-
+
+list1=[2,1,3,4,5,6,7]
+list2=list1	#cannot simply copy the list,
+
+
+IMPORTANT:-
+copied_list=list1.copy()
+copied_list=list(list1)
+copied_list=list[:]
+
+joining two lists:-
+list3=list1+list2
+list3=[list1,list2] ## becomes nested list, not joining
+list3=join(list1,list2) ##join() is only in string not in list
+
+extend():- to copy from one list to another
+======================================================================================
+TUPLE:-
+creating tuple with one item:-
+tuples1=("joyslin",)    ## or else its string
+
+Updating tuples:- cannot add, remove,change but can be done indirectly
+===> like convert the tuple to list, change the list, convert the list back to tuple
+
+
+tuple1=("joyslin","lavita","madtha")
+list1=list(tuple1)
+list1.append("Mangalore")
+tuple1=tuple(list1)
+
+
+Updating tuples:- By adding tuples to a tuple
+tuple1=("Python","Programming")
+tuple2=("W3schools",)
+tuple1+=tuple2
+print(tuple1)
+
+packing the tuples:-
+tuple1=("banana","apple","cherry")
+
+unpacking the tuples:-
+(yellow,red,pink)=tuple1
+print("yellow")			#banana
+print("red")			#apple
+
+if number of values are more than the variables:-  use *
+tuple1=("apple", "banana", "cherry", "strawberry", "raspberry")
+(red, *yellow, pink)= tuple1
+print(red)
+print(yellow)
+print(pink)
+
+##output 
+apple
+[banan, cherry,strawberry]
+rasberry
+
+======================================================================================
+sets:-
+sets cannot be accessed through the index,
+But can be accessed through for loop, and somtimes IN keywords
+Sets cannot be changed through index also but can add()
+
+add():-
+sets={"apple","banana","cherry"}
+sets.add("Mango")
+print(sets)
+
+update():- to add items from one set to another set
+
+remove():-error arrises
+discard():- doesnt have error
+pop():-randomly removes the element
+clear():=empties the set
+del keyword
+
+
+joinng sets:-
+
+union()  or |:-
+In union() can join the datatype of different category
+
+sets1={"orange","mango","banana"}
+sets2={"yellow","bellow","cello"}
+sets3={"hi"}
+sets4={"joyslin","madtha"}
+sets5= sets1.union(sets2,sets3,sets4)   or sets3 = sets1 | sets2 | sets3 | sets4
+
+
+intersection() or &  (only duplicates):- 
+items present in both sets
+In intersection() can join the datatype of different category
+
+intersection_update() or (&=)   :- it will update on the original set itself
+
+difference() or - (unique) :-  
+keeps items from first set that are not in the other set
+
+difference_update();- same as intersection_update()
+
+symmetric_difference() or ^ :- keeps item which are not presen in both sets
+symmetric_difference_update()
