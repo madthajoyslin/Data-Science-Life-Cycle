@@ -1,0 +1,102 @@
+----------------------------------------------------------------------
+ANY and ALL operators
+------------------------------------------------------------
+create database example;
+show databases;
+use example;
+drop database example;
+
+create table employee(empid int,
+			name varchar(20),
+			age int,
+			address varchar(25)
+			);
+
+insert into employee(empid, name,age,address)
+		values(1, "Ajay", 25, "Chennai");
+
+select empid from employee;
+
+select distinct address from employee where address="Chennai"; 
+
+delete from employee;
+
+truncate table employee;
+
+select 15+6 as Addition;
+
+select Current_Timestamp; 
+
+select Getdate();
+
+--------------------------------------------------------
+logical operator:- and, or, in, like, between, unique
+Negate Operator:- NOT
+WHERE is clause
+LIKE has % (0 or more characters);  _ (single character) 
+------------------------------------------------------------
+
+select * from employee where name like 's%';
+select * from employee where age in (30,50);
+select * from employee where age between 30 and 50;
+
+-------------------------------------------------------------
+TOP, LIMIT or ROWNUM
+
+select top 3 * from employee;
+select * from employee limit 3;
+---------------------------------------------------------------
+ORDER BY, GROUP BY (used with aggregates) (arranging similar data in group) is clause
+
+select * from employee where [condition]
+			order by [condition] [asc/desc];
+
+select * from employee where [condition]
+			group by [condition]
+			order by [condition] [asc/desc];
+
+-----------------------------------------------------------------------
+There are 6 constraints in sql:-
+
+NOT NULL:- Values in column cant be null
+UNIQUE:- Values in column must be different
+PRIMARY KEY:- Combination of NOT NULL and UNIQUE
+CHECK:-
+DEFAULT:- if the values are not provided then it will fill
+-------------------------------------------------------------------
+Update query:- modifies existing record
+
+update employee set salary= 20000 where salary <20000;
+
+----------------------------------------------------------------------
+Alter query:- modifies table structure
+	   :- Add, delete or modify columns in a table.
+
+alter table employee ADD columnname datatype;
+alter table employee DROP COLUMN columname;
+alter table employee MODIFY COLUMN columnname datatype;
+alter table employee RENAME TO company;
+
+--------------------------------------------------------------------
+Joins:- Inner, Left, Right
+select columns from table1 
+	INNER JOIN table2 
+	on table1.column =table2.column;
+-----------------------------------------------------------------------TRANSACTIONS:- Rollback(undo), commit(save), savepoint(intermediate points)
+-----------------------------------------------------------------------
+AGGREGATE FUNCTIONS:- min,max,avg,count,sum
+
+HAVING clause:- because WHERE cant be used in the AGGREGATE FUNCTIONS
+
+----------------------------------------------------------------------
+DDL – Data Definition Language (allhas table name)
+- Create, Alter, Drop
+DML – Data Manipulation Language
+- Select, Insert, Update, Delete
+DCL – Data Control Language
+- Grant, revoke
+TCL – Transaction Control Language
+- Rollback, Commit, Savepoint
+
+-----------------------------------------------------------------------
+
